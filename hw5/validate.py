@@ -102,7 +102,7 @@ class GradingTest(unittest.TestCase):
         self.assertEqual(2, mat1[0,1])
         self.assertEqual(size+2, mat1[1,1])
         self.assertEqual(size*2, mat1[1,size-1])
-        self.assertEqual(size*size, mat1[size-1,size-1])
+        self.assertEqual(size**2, mat1[size-1,size-1])
 
         for i in range(mat1.nrow):
             for j in range(mat1.ncol):
@@ -151,7 +151,7 @@ class GradingTest(unittest.TestCase):
 
     def check_tile(self, mat1, mat2, tsize):
 
-        if 0 == tsize:
+        if tsize == 0:
             ret_tile = _matrix.multiply_naive(mat1, mat2)
             tile_str = "_matrix.multiply_naive(mat1, mat2)"
         else:
