@@ -93,7 +93,7 @@ class GradingTest(unittest.TestCase):
         self.assertEqual(2, mat1[0,1])
         self.assertEqual(size+2, mat1[1,1])
         self.assertEqual(size*2, mat1[1,size-1])
-        self.assertEqual(size*size, mat1[size-1,size-1])
+        self.assertEqual(size**2, mat1[size-1,size-1])
 
         for i in range(mat1.nrow):
             for j in range(mat1.ncol):
